@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import {MatDialogModule} from '@angular/material/dialog';
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -21,7 +20,7 @@ import { FormComponent } from './form/form.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
