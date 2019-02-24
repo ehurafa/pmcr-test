@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 
-import {MaterialModule} from './material.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -16,6 +16,9 @@ import { ContentComponent } from './content/content.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+
+import { DataService } from './services/data.service';
+
 
 @NgModule({
   declarations: [
@@ -33,8 +36,9 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule,
 	MaterialModule,
 	FlexLayoutModule
+	
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

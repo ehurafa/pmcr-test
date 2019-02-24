@@ -2,7 +2,10 @@
 @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 
 
-
+/* RESET */
+body {
+  margin: 0;
+}
 
 /* BASE */
 .col-lef{

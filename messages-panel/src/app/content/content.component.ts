@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { DataService } from '../services/data.service';
+import { Message } from '../Message';
+import { DataSource } from '@angular/cdk/table';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'content',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) {
+  }
+  
+   displayedColumns = ['title', 'date_posted',  'subject', 'delete'];
+   dataSource = new MessageDataSource(this.dataService);
+  
 
-  ngOnInit() {
+}
+
+
+
+export class MessageDataSource extends DataSource<any> {
+  constructor(private dataService: DataService) {
+    super();
   }
 
+  connect(): Observable<Message[]> {
+    return this.dataService.getData();
+  }
+
+  disconnect() {
+  }
 }
