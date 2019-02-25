@@ -1,8 +1,7 @@
 export interface Message {
   id: number;
   title: string;
-  //hour: string;
-  updated_at: Date;
+  hour: string;
   subject: string;
   body: string;
 }

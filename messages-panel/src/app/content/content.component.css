@@ -26,6 +26,9 @@ br{
 	display:none;
 }
 
+.message-table{
+	width:100%;
+}
 
 .message-loading-shade {
   position: absolute;

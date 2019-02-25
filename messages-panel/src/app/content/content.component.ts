@@ -4,6 +4,7 @@ import { Message } from '../Message';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs/Observable';
 
+
 @Component({
   selector: 'content',
   templateUrl: './content.component.html',
@@ -15,10 +16,12 @@ export class ContentComponent implements OnInit {
   }
   
     
-	data: Message[] = [];
-	isLoadingResults = true;
+	// data: Message[] = [];
+	private data: any[];
+
+	isLoadingResults = false;
   
-   displayedColumns = ['title', 'date_posted',  'subject', 'delete'];
+   displayedColumns = ['title', 'hour',  'subject', 'body' ,'delete'];
    //dataSource = new MessageDataSource(this.dataService);
    
    /*openDialog(): void {
@@ -33,7 +36,7 @@ export class ContentComponent implements OnInit {
   }   */
   
   ngOnInit() {
-	  this.api.getMessages()
+	  /*this.api.getMessages()
 		.subscribe(res => {
 		  this.data = res;
 		  console.log(this.data);
@@ -41,7 +44,23 @@ export class ContentComponent implements OnInit {
 		}, err => {
 		  console.log(err);
 		  this.isLoadingResults = false;
-		});
+		});      
+		*/
+		
+		this.api.getAll()
+		.subscribe(res => {
+		  this.data = res;
+		  console.log(this.data);
+		  this.isLoadingResults = false;
+		}, err => {
+		  console.log(err);
+		  this.isLoadingResults = false;
+		}); 
+		
+		
+	
+		
+		
 	}
 	  
 

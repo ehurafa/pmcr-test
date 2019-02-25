@@ -10,22 +10,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { EditComponent } from './edit/edit.component';
-import { MessagesDialogComponent } from './messages-dialog/messages-dialog.component';
-
-
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent,
     ContentComponent,
     HomeComponent,
     RegisterComponent,
@@ -38,7 +32,8 @@ import { MessagesDialogComponent } from './messages-dialog/messages-dialog.compo
 	MaterialModule,
 	FlexLayoutModule,
 	FormsModule,
-	HttpClientModule
+	HttpClientModule,
+	ReactiveFormsModule
 	
   ],
  

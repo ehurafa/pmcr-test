@@ -1,69 +1,46 @@
 <header></header>  
-  <!-- <div class="container">
-      <div fxLayout="row" fxLayoutAlign="center center" class="content">
-        <mat-card class="card" >
-          <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-            <h3>Cadastrar Mensagem</h3>
-          </mat-card-title>
-          <mat-card-content>
-              <div class="register-container">
-                  <form class="form" (ngSubmit)="onSubmit()"> 
-					<mat-form-field> 
-						<input matInput placeholder="Título da Mensagem" type="text" required [(ngModel)]="messagePost.title" name="title">
-					</mat-form-field>					
-					<mat-form-field>
-					  <input matInput placeholder="Assunto da Mensagem" type="text" required [(ngModel)]="messagePost.subject" name="subject">
-					</mat-form-field>
-					<mat-form-field>
-					  <textarea matInput placeholder="Corpo da Mensagem" required [(ngModel)]="messagePost.body" name="body"></textarea>
-					</mat-form-field>				
-				   
-					<button mat-raised-button type="submit" color="primary">Cadastrar</button>
-					
-				  </form>  
-				  
-				  
-                </div> 
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
--->
+ 
+<div class="container">
+	<div class="example-container mat-elevation-z8">
+	  <!-- <div class="example-loading-shade"
+		   *ngIf="isLoadingResults">
+		<mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+	  </div>  -->
 
-<div class="example-container mat-elevation-z8">
-  <!-- <div class="example-loading-shade"
-       *ngIf="isLoadingResults">
-    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-  </div>  -->
-  <div class="button-row">
-    <a mat-flat-button color="primary" [routerLink]="['/products']"><mat-icon>list</mat-icon></a>
-  </div>
-  <mat-card class="example-card">
-    <form [formGroup]="productForm" (ngSubmit)="onFormSubmit(productForm.value)">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Product Name" formControlName="prod_name"
-               [errorStateMatcher]="matcher">
-        <mat-error>
-          <span *ngIf="!productForm.get('prod_name').valid && productForm.get('prod_name').touched">Please enter Product Name</span>
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Product Desc" formControlName="prod_desc"
-               [errorStateMatcher]="matcher">
-        <mat-error>
-          <span *ngIf="!productForm.get('prod_desc').valid && productForm.get('prod_desc').touched">Please enter Product Description</span>
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Product Price" formControlName="prod_price"
-               [errorStateMatcher]="matcher">
-        <mat-error>
-          <span *ngIf="!productForm.get('prod_price').valid && productForm.get('prod_price').touched">Please enter Product Price</span>
-        </mat-error>
-      </mat-form-field>
-      <div class="button-row">
-        <button type="submit" [disabled]="!productForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
-      </div>
-    </form>
-  </mat-card>
-</div>
+	  <mat-card class="example-card">
+	  
+		<form [formGroup]="messageForm" (ngSubmit)="onFormSubmit(messageForm.value)">
+		
+		  <mat-form-field class="example-full-width">
+			<input matInput placeholder="Título da Mensagem" formControlName="message_title"
+				   [errorStateMatcher]="matcher">
+		 <!--   <mat-error>
+			  <span *ngIf="!messageForm.get('messsage_title').valid && messageForm.get('message_title').touched">Preencha com o título da mensagem</span>
+			</mat-error>  -->
+		  </mat-form-field>
+		  
+		  <mat-form-field class="example-full-width">     
+				   
+			<textarea matInput placeholder="Conteúdo da mensagem" formControlName="message_body"
+				   [errorStateMatcher]="matcher"></textarea>							  
+			<mat-error>
+			  <span *ngIf="!messageForm.get('message_body').valid && messageForm.get('message_body').touched">Preencha com o conteúdo da mensagem</span>
+			</mat-error>
+		  </mat-form-field>
+		  
+		  <mat-form-field class="example-full-width">
+			<input matInput placeholder="Assunto da mensagem" formControlName="message_subject"
+				   [errorStateMatcher]="matcher">
+		   <!-- <mat-error>
+			  <span *ngIf="!messageForm.get('message_subject').valid && productForm.get('message_subject').touched">Preencha com o assunto da mensagem</span>
+			</mat-error>  -->
+		  </mat-form-field>
+		  <div class="button-row">
+			<button type="submit" [disabled]="!messageForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+		  </div>
+		 
+		</form>
+	  </mat-card>
+	</div>
+
+ </div>

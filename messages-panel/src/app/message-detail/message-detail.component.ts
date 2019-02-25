@@ -11,9 +11,8 @@ import { Message } from '../message';
 })
 export class MessageDetailComponent implements OnInit {
 	
-  msg: Message = { id: 0, title: '', updated_at: '', subject: '', body: '' };
-  isLoadingResults = false;  
-   
+  msg: Message = { id: 0, title: '', hour: '', subject: '', body: '' };
+  isLoadingResults = false;     
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
   

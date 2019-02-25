@@ -3,18 +3,33 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Message } from '../Message';
+import 'rxjs/add/operator/map'
+
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = "/api/v1/messages";
+
+
+ 
+
+
+// export type Item = { id: number, title: string, subject, string, hour: string, body: string };
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  getJsonData(): Promise<any[]>{
+    return this.http.get<any[]>('http://localhost:4200/assets/messages.json').toPromise();
+  }
+  
+   url = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+  }
   
   private handleError<T> (operation = 'operation', result?: T) {
 	  return (error: any): Observable<T> => {
@@ -27,13 +42,35 @@ export class ApiService {
 	  };
 	}
 	
+	getAll(): Observable<any> {
+    return this.http.get(this.url + '?_sort=id&_order=desc')
+      .map(response => response.json());
+  }
+	
 	
 	getMessages (): Observable<Message[]> {
-	return this.http.get<Message[]>(apiUrl)
+		/* return this.http.get<Message[]>(apiUrl)
+		//.map(res => res.json())
 		.pipe(
 		  tap(heroes => console.log('fetched messages')),
-		  catchError(this.handleError('getMessages', []))
-		);
+		  catchError(console.log('error');this.handleError('getMessages', []))
+		);  
+		
+		
+		
+		return this.http
+		  .get("api/messages.json")
+		  .map(data => data.json() as Array<Item>)
+		  .subscribe(data => {
+			this.items = data;
+			console.log(data);
+		  });  */
+		  
+		 return this.http.get("api/messages.json")
+			.subscribe((success) => {
+			  console.log('>> success.json()')  ;       
+			});
+		  
 	}
 	
 	getMessage(id: number): Observable<Message> {

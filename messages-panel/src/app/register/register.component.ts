@@ -3,7 +3,7 @@ import { MatDialogRef } from '@angular/material';
 
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
-import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators  } from '@angular/forms';
 
 
 @Component({
@@ -16,29 +16,17 @@ export class RegisterComponent implements OnInit {
 	messageForm: FormGroup;
 	message_tit:string='';
 	message_body:string='';
-	message_subject:number=null;
-	updated_at:Date=null;
+	message_subject:string=null;
+	hour:string='';
 	isLoadingResults = false;
 
- /* messagePost = {
-    title: '',
-	  subject: '',
-    body: '',
-    position: 0,
-    date_posted: new Date()
-  };
-*/
   constructor( private router: Router, private api: ApiService, private formBuilder: FormBuilder ) {
   }
 
   
 
-  /*onSubmit(): void {
-    this.messagePost.position = this.dataService.dataLength();
-  }
-*/
 
-	onFormSubmit(form:NgForm) {
+	/*onFormSubmit(form:NgForm) {
 	  this.isLoadingResults = true;
 	  this.api.addMessage(form)
 		.subscribe(res => {
@@ -49,14 +37,14 @@ export class RegisterComponent implements OnInit {
 			console.log(err);
 			this.isLoadingResults = false;
 		  });
-	}
+	}*/
 
   ngOnInit() {
 	  this.messageForm = this.formBuilder.group({
 		'message_title' : [null, Validators.required],
 		'message_body' : [null, Validators.required],
 		'message_subject' : [null, Validators.required],
-		'updated_at' : [null, Validators.required]
+		'hour' : [null, Validators.required]
 	  });
   }
 
