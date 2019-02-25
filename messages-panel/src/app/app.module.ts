@@ -18,7 +18,6 @@ import { EditComponent } from './edit/edit.component';
 import { MessagesDialogComponent } from './messages-dialog/messages-dialog.component';
 
 
-import { DataService } from './services/data.service';
 
 
 
@@ -43,7 +42,7 @@ import { DataService } from './services/data.service';
 	
   ],
  
-  providers: [DataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

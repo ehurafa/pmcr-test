@@ -45,7 +45,7 @@ export class ApiService {
 	}
 	
 	addMessage (message): Observable<Message> {
-	return this.http.post<Message>(apiUrl, product, httpOptions).pipe(
+	return this.http.post<Message>(apiUrl, message, httpOptions).pipe(
 		tap((message: Message) => console.log(`added message w/ id=${message.id}`)),
 		catchError(this.handleError<Message>('addMesssage'))
 	  );
@@ -53,7 +53,7 @@ export class ApiService {
 	
 	updateMessage (id, message): Observable<any> {
 	  const url = `${apiUrl}/${id}`;
-	  return this.http.put(url, product, httpOptions).pipe(
+	  return this.http.put(url, message, httpOptions).pipe(
 		tap(_ => console.log(`updated message id=${id}`)),
 		catchError(this.handleError<any>('updateMessage'))
 	  );

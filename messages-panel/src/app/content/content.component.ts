@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { DataService } from '../services/data.service';
 import { Message } from '../Message';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs/Observable';
