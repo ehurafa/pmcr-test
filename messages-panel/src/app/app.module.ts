@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 
 import { MaterialModule } from './material.module';
@@ -13,9 +15,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
-import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { MessagesDialogComponent } from './messages-dialog/messages-dialog.component';
+
 
 import { DataService } from './services/data.service';
 
@@ -26,7 +29,6 @@ import { DataService } from './services/data.service';
     HeaderComponent,
     SidebarComponent,
     ContentComponent,
-    FormComponent,
     HomeComponent,
     RegisterComponent
   ],
@@ -35,9 +37,11 @@ import { DataService } from './services/data.service';
     BrowserAnimationsModule,
     AppRoutingModule,
 	MaterialModule,
-	FlexLayoutModule
+	FlexLayoutModule,
+	FormsModule
 	
   ],
+ 
   providers: [DataService],
   bootstrap: [AppComponent]
 })

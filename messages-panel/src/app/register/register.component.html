@@ -1,3 +1,28 @@
-<p>
-  register works!
-</p>
+<header></header>  
+   <div class="container">
+      <div fxLayout="row" fxLayoutAlign="center center" class="content">
+        <mat-card class="card" >
+          <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+            <h3>Cadastrar Mensagem</h3>
+          </mat-card-title>
+          <mat-card-content>
+              <div class="register-container">
+                  <form class="form" (ngSubmit)="onSubmit()"> 
+					<mat-form-field> 
+						<input matInput placeholder="Título da Mensagem" type="text" required [(ngModel)]="messagePost.title" name="title">
+					</mat-form-field>					
+					<mat-form-field>
+					  <input matInput placeholder="Assunto da Mensagem" type="text" required [(ngModel)]="messagePost.subject" name="subject">
+					</mat-form-field>
+					<mat-form-field>
+					  <textarea matInput placeholder="Corpo da Mensagem" required [(ngModel)]="messagePost.body" name="body"></textarea>
+					</mat-form-field>				
+				   
+					<button mat-raised-button type="submit" color="primary">Cadastrar</button>
+					
+				  </form>
+                </div> 
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>

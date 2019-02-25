@@ -1,0 +1,23 @@
+.card {		
+	min-width: 80%;  
+	.register-container {
+		display: flex;
+		flex-direction: column;
+		min-width: 100%;
+		
+	}	
+	
+}
+.form {
+	display: flex;
+	flex-direction: column;	
+	& > *{    
+		width: 100%;
+	}	
+	
+}
+
+.mat-raised-button{
+	max-width:120px;
+}
+

@@ -19,8 +19,8 @@ const routes: Routes = [
 		 data: { title: 'Cadastrar Mensagem'}
 	  },
 	  { path: '',
-		redirectTo: '/inicial',
-		pathMatch: 'full'
+			redirectTo: '/inicial',
+			pathMatch: 'full'
 	  },
 	  { path: '**', component: HomeComponent }
   
