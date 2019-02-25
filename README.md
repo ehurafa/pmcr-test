@@ -28,7 +28,7 @@ Para rodar o projeto basta seguir os passos à seguir
 
 * Executar o comando "npm install" para baixar as dependências do projeto (Caso necessário , por incompatibilidade de dependencias. Utilizar o comando --force). 
 
-* Após baixar as dependências executar o comando "foundation watch" para compilar o Sass
+
 
 ```
 
