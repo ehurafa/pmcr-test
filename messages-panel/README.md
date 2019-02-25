@@ -1,27 +1,42 @@
-# MessagesPanel
+# PMCR Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+Teste de habilidades necessárias para as tarefas de Front-end
 
-## Development server
+## Iniciando o projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste.
 
-## Code scaffolding
+### Pré-requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+O que você precisa para rodar o projeto
 
-## Build
+```
+* NodeJS. De preferência uma versão atualizada. Foi usada a versão 6.10.3
+* Npm. Foi usada a versão 5.6.0
+* Suporte Chrome, Firefox, Safari 6+, IE10+, iOS 7+, and Android 4.4+.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
 
-## Running unit tests
+### Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para rodar o projeto basta seguir os passos à seguir
 
-## Running end-to-end tests
+```
+* Baixar ou clonar o projeto deste repositório
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Abrir o terminal na pasta do projeto
 
-## Further help
+* Executar o comando "npm install" para baixar as dependências do projeto (Caso necessário utilizar o comando --force). 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Após baixar as dependências executar o comando "foundation watch" para compilar o Sass
+
+```
+
+### API local
+
+```
+* Para habilitar a API na posta 3000 basta utilizar o comando json-server --watch messageAPI.json
+
+```
+
+### :)
