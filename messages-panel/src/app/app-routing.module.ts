@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent }   from './home/home.component';
 import { RegisterComponent }   from './register/register.component';
+import { EditComponent } from './edit/edit.component';
+
 
 
 const routes: Routes = [
@@ -18,6 +20,12 @@ const routes: Routes = [
 		 component: RegisterComponent,
 		 data: { title: 'Cadastrar Mensagem'}
 	  },
+	  {
+		path: 'edit/:id',
+		component: EditComponent,
+		data: { title: 'Editar Mensagem' }
+	  }
+	  ,
 	  { path: '',
 			redirectTo: '/inicial',
 			pathMatch: 'full'

@@ -1,14 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,10 +14,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { EditComponent } from './edit/edit.component';
 import { MessagesDialogComponent } from './messages-dialog/messages-dialog.component';
 
 
 import { DataService } from './services/data.service';
+
 
 
 @NgModule({
@@ -30,7 +29,8 @@ import { DataService } from './services/data.service';
     SidebarComponent,
     ContentComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +38,8 @@ import { DataService } from './services/data.service';
     AppRoutingModule,
 	MaterialModule,
 	FlexLayoutModule,
-	FormsModule
+	FormsModule,
+	HttpClientModule
 	
   ],
  

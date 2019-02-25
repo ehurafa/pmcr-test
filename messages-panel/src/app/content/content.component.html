@@ -1,6 +1,12 @@
 <div>
-  <br>
+  
     <div class="container">
+	
+	<div class="message-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  
        
     <div class="container">
       <div fxLayout="row" fxLayoutAlign="center center" class="content">
@@ -10,13 +16,13 @@
           </mat-card-title>
           <mat-card-content>
               <div class="message-container mat-elevation-z8">
-                  <mat-table #table [dataSource]="dataSource">
+                 <!--  <mat-table #table [dataSource]="dataSource">
                   <ng-container matColumnDef="date_posted">
-                    <mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef> Data de registro </mat-header-cell>
                     <mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'd/M/y'}} </mat-cell>
                   </ng-container>
                     <ng-container matColumnDef="title">
-                      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+                      <mat-header-cell *matHeaderCellDef> Título </mat-header-cell>
                       <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
                     </ng-container>
                     <ng-container matColumnDef="subject">
@@ -24,7 +30,7 @@
                       <mat-cell *matCellDef="let element"> {{element.subject}} </mat-cell>
                     </ng-container>
                     <ng-container matColumnDef="delete">
-                      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                      <mat-header-cell *matHeaderCellDef>Apagar</mat-header-cell>
                       <mat-cell *matCellDef="let element">
                         <a
                             type="button">
@@ -34,7 +40,27 @@
                     </ng-container>   
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                  </mat-table>
+                  </mat-table>  -->
+				  
+				  <table mat-table [dataSource]="data" class="message-table"
+					   matSort matSortActive="prod_name" matSortDisableClear matSortDirection="asc">
+
+				  <!-- Product Name Column -->
+				  <ng-container matColumnDef="prod_name">
+					<th mat-header-cell *matHeaderCellDef>Product Name</th>
+					<td mat-cell *matCellDef="let row">{{row.prod_name}}</td>
+				  </ng-container>
+
+				  <!-- Product Price Column -->
+				  <ng-container matColumnDef="prod_price">
+					<th mat-header-cell *matHeaderCellDef>Product Price</th>
+					<td mat-cell *matCellDef="let row">$ {{row.prod_price}}</td>
+				  </ng-container>
+
+				  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/product-details/', row.id]"></tr>
+				</table>
+				
                 </div> 
           </mat-card-content>
         </mat-card>
