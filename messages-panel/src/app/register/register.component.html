@@ -1,13 +1,14 @@
 <header></header>  
  
 <div class="container">
-	<div class="example-container mat-elevation-z8">
+	<div class="card-container">
 	  <!-- <div class="example-loading-shade"
 		   *ngIf="isLoadingResults">
 		<mat-spinner *ngIf="isLoadingResults"></mat-spinner>
 	  </div>  -->
 
-	  <mat-card class="example-card">
+	  <div fxLayout="row" fxLayoutAlign="center center" class="content">
+	  <mat-card class="card">
 	  
 		<form [formGroup]="messageForm" (ngSubmit)="onFormSubmit(messageForm.value)">
 		
@@ -41,6 +42,7 @@
 		 
 		</form>
 	  </mat-card>
+	</div>
 	</div>
 
  </div>
