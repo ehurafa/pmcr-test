@@ -14,30 +14,16 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 export class RegisterComponent implements OnInit {
 	
 	messageForm: FormGroup;
-	message_tit:string='';
-	message_body:string='';
-	message_subject:string=null;
-	hour:string='';
+	message_tit: string='';
+	message_body: string='';
+	message_subject: string=null;
+	hour: string='';
 	isLoadingResults = false;
+	
 
   constructor( private router: Router, private api: ApiService, private formBuilder: FormBuilder ) {
   }
 
-  
-
-
-	/*onFormSubmit(form:NgForm) {
-	  this.isLoadingResults = true;
-	  this.api.addMessage(form)
-		.subscribe(res => {
-			let id = res['_id'];
-			this.isLoadingResults = false;
-			this.router.navigate(['/me-detassageils', id]);
-		  }, (err) => {
-			console.log(err);
-			this.isLoadingResults = false;
-		  });
-	}*/
 
   ngOnInit() {
 	  this.messageForm = this.formBuilder.group({
@@ -47,5 +33,20 @@ export class RegisterComponent implements OnInit {
 		'hour' : [null, Validators.required]
 	  });
   }
+  
+   onFormSubmit(form:NgForm) {
+    this.isLoadingResults = true;
+    this.api.addMessage(form)
+      .subscribe(res => {
+          let id = res['_id'];
+          this.isLoadingResults = false;
+          this.router.navigate(['/mensagem', id]);
+        }, (err) => {
+          console.log(err);
+          this.isLoadingResults = false;
+        });
+  }
+
+
 
 }

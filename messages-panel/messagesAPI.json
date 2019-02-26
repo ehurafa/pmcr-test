@@ -1,19 +1,36 @@
 {
-  "posts": [
+  "messages":[
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+		"id": 1,
+		"title": "Mensagem 1",
+		"hour": "14:00",
+		"subject": "Assunto da mensgem 1",
+		"body": "Conteúdo da Mensagem 1"
+		
+	},
+	{
+		"id": 2,
+		"title": "Mensagem 2",
+		"hour": "14:02",
+		"subject": "Assunto da mensgem 2",
+		"body": "Conteúdo da Mensagem 2"
+		
+	},
+	{
+		"id": 3,
+		"title": "Mensagem 3",
+		"hour": "14:03",
+		"subject": "Assunto da mensgem 3",
+		"body": "Conteúdo da Mensagem 3"
+		
+	},{
+		"id": 4,
+		"title": "Mensagem 4",
+		"hour": "14:04",
+		"subject": "Assunto da mensgem 4",
+		"body": "Conteúdo da Mensagem 4"
+		
+	}
+  ]
+ 
 }

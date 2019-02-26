@@ -10,20 +10,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { EditComponent } from './edit/edit.component';
+import { MessageDetailComponent } from './message-detail/message-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ContentComponent,
     HomeComponent,
     RegisterComponent,
-    EditComponent
+    EditComponent,
+	MessageDetailComponent
   ],
   imports: [
     BrowserModule,

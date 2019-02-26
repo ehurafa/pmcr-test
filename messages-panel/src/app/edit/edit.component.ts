@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 import { Message } from '../message';
+
 
 
 @Component({
@@ -15,13 +17,17 @@ import { Message } from '../message';
 export class EditComponent implements OnInit {
 	
 	messageForm: FormGroup;
-	id:number=0;
+	id:number= 0;
 	message_title:string='';
 	message_body:string='';
 	message_subject:number=null;
+	message_hour:string='';
 	isLoadingResults = false;
+	
+	
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
+  
   
   getMessage(id) {
 	  this.api.getMessage(id).subscribe(data => {
@@ -29,10 +35,13 @@ export class EditComponent implements OnInit {
 		this.messageForm.setValue({
 		  message_title: data.title,
 		  message_body: data.body,
-		  message_subject: data.subject
+		  message_subject: data.subject,
+		   message_hour: data.hour
 		});
 	  });
 	}
+	
+
   
   onFormSubmit(form:NgForm) {
 	  this.isLoadingResults = true;
@@ -40,25 +49,33 @@ export class EditComponent implements OnInit {
 		.subscribe(res => {
 			let id = res['id'];
 			this.isLoadingResults = false;
-			this.router.navigate(['/message-details', id]);
+			this.router.navigate(['/mensagem', id]);
 		  }, (err) => {
 			console.log(err);
 			this.isLoadingResults = false;
 		  }
 		);
 	}
+
 	
 	messageDetails() {
-	  this.router.navigate(['/message-details', this.id]);
+	  this.router.navigate(['/mensagem', this.id]);
 	}
+	
+	
 
   ngOnInit() {
-  this.getMessage(this.route.snapshot.params['id']);
-  this.messageForm = this.formBuilder.group({
-    'message_title' : [null, Validators.required],
-    'message_body' : [null, Validators.required],
-    'message_subject' : [null, Validators.required]
-  });
-}
+	  this.getMessage(this.route.snapshot.params['id']);
+	  this.messageForm = this.formBuilder.group({
+		'message_title' : [null, Validators.required],
+		'message_body' : [null, Validators.required],
+		'message_subject' : [null, Validators.required],
+		'message_hour' : [null, Validators.required]
+	  });
+	}
+
+
+  
+  
 
 }

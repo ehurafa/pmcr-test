@@ -19,14 +19,16 @@
           </mat-card-title>
           <mat-card-content>
               <div class="message-container mat-elevation-z8">
+			  
+			  data = {{ data }}
              
 				  <table mat-table [dataSource]="data" class="message-table"
-					   matSort matSortActive="prod_name" matSortDisableClear matSortDirection="asc">
+					   matSort matSortActive="title" matSortDisableClear matSortDirection="asc">
 
 				  <!-- Título da mensagem -->
 				  <ng-container matColumnDef="title">
 					<th mat-header-cell *matHeaderCellDef>Título</th>
-					<td mat-cell *matCellDef="let row">{{data.title}}</td>
+					<td mat-cell *matCellDef="let row; let i = index">{{data[i].title}}</td>
 				  </ng-container>
 
 				  <!-- Hora da publicação -->
