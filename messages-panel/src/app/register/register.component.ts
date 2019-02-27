@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 	message_tit: string='';
 	message_body: string='';
 	message_subject: string=null;
-	hour: string='';
+	hour: Date= new Date();
 	isLoadingResults = false;
 	
 
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
 		'title' : [null, Validators.required],
 		'body' : [null, Validators.required],
 		'subject' : [null, Validators.required],
-		'hour' : [null, Validators.required]
+		'hour' : [new Date()]
 	  });
   }
   

@@ -22,7 +22,7 @@
 			  
 			   
 				 <table mat-table [dataSource]="data" class="message-table"
-           matSort matSortActive="title" matSortDisableClear matSortDirection="asc">
+           matSort matSortActive="hour" matSortDisableClear matSortDirection="asc">
 					   
 				  <!-- Título da mensagem -->
 				  <ng-container matColumnDef="title">
@@ -33,13 +33,13 @@
 				 <!-- Hora da publicação -->
 				  <ng-container matColumnDef="hour">
 					<th mat-header-cell *matHeaderCellDef>Hora de cadastro</th>
-					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].hour}}</td>
+					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].hour | date: 'dd/MM/yyy hh:mm' }}</td>
 				  </ng-container>
 				  
 				  <!-- Assunto da mensagem -->
 				  <ng-container matColumnDef="subject">
 					<th mat-header-cell *matHeaderCellDef>Assunto da mensagem</th>
-					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].subject}}</td>
+					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].subject }}</td>
 				  </ng-container>
 				 
 				  

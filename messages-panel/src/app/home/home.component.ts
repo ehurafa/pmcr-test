@@ -18,8 +18,8 @@ import { Observable } from 'rxjs/Observable';
 export class HomeComponent implements OnInit {
 	
 	displayedColumns: string[] = ['title', 'hour',  'subject', 'view' , 'edit'];
-  data: Message[] = [];
-  isLoadingResults = true;
+    data: Message[] = [];
+    isLoadingResults = true;
 
  
  
@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
 		  }
 		);
 	}
-
    
   
   ngOnInit() {
