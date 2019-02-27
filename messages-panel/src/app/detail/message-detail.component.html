@@ -1,46 +1,49 @@
 <header></header>
 
 <div>
-  
-    <div class="container">
+	<div class="container">
 		<div class="message-container">
-		 
-		  
-		  <div fxLayout="row" fxLayoutAlign="center center" class="content">
-		  
-		  <mat-card class="card">
-			<mat-card-header >
-			  <mat-card-title><h2>{{message.title}}</h2></mat-card-title>
-			  <mat-card-subtitle></mat-card-subtitle>
-			</mat-card-header>
-			<mat-card-content>
-			
-				<div class="col col-left">
-					<p>
-						Assunto: {{message.subject}}  |  Data do cadastro: {{message.hour | date: 'dd/MM/yyy hh:mm' }}
-					</p>
-					
-				</div>				
-				
-				<div class="col col-right">
-					<h4>Conteúdo</h4>
-					<p>
-						{{message.body}}
-					</p>
-				</div>
-				
-			 
-			</mat-card-content>
-			<div class="col col-left">
-					<mat-card-actions class="buttons">
-					  <a mat-flat-button color="primary" [routerLink]="['/editar', message.id]"><mat-icon>edit</mat-icon></a>
-					  <a mat-flat-button color="warn" (click)="deleteMessage(message.id)"><mat-icon>delete</mat-icon></a>
-					</mat-card-actions>
-							
-				</div>
-			
-		  </mat-card>
-		  </div>
+
+			<div fxLayout="row" fxLayoutAlign="center center" class="content">
+
+				<mat-card class="card">
+					<mat-card-header>
+						<mat-card-title>
+							<h2>{{message.title}}</h2>
+						</mat-card-title>
+						<mat-card-subtitle></mat-card-subtitle>
+					</mat-card-header>
+					<mat-card-content>
+
+						<div class="col col-left">
+							<p>
+								Assunto: {{message.subject}} | Data do cadastro: {{message.hour | date: 'dd/MM/yyy hh:mm' }}
+							</p>
+
+						</div>
+
+						<div class="col col-right">
+							<h4>Conteúdo</h4>
+							<p>
+								{{message.body}}
+							</p>
+						</div>
+
+					</mat-card-content>
+					<div class="col col-left">
+						<mat-card-actions class="buttons">
+							<a mat-flat-button color="primary" [routerLink]="['/editar', message.id]">
+								<mat-icon>edit</mat-icon>
+							</a>
+							<a mat-flat-button color="warn" (click)="deleteMessage(message.id)">
+								<mat-icon>delete</mat-icon>
+							</a>
+						</mat-card-actions>
+
+					</div>
+
+				</mat-card>
+			</div>
 		</div>
 	</div>
 </div>
