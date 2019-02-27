@@ -4,17 +4,13 @@
   
     <div class="container">
 	
-<div class="example-container mat-elevation-z8">
- <!-- <div class="example-loading-shade"
-       *ngIf="isLoadingResults">
-    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-  </div>  -->
-  <div class="button-row">
-    <a mat-flat-button color="primary" (click)="productDetails()"><mat-icon>info</mat-icon></a>
-  </div>
+<div class="edit-container ">
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="content"> 
   
-  <mat-card class="example-card">
-    <form [formGroup]="messageForm" (ngSubmit)="onFormSubmit(messageForm.value)">
+  
+  <mat-card class="card">
+    <form [formGroup]="messageForm" (ngSubmit)="onFormSubmit(messageForm.value)" class="form">
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Título da mensagem" formControlName="title"
                [errorStateMatcher]="matcher">
@@ -23,8 +19,9 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Corpo da mensagem" formControlName="body"
-               [errorStateMatcher]="matcher">
+       
+		<textarea matInput placeholder="Conteúdo da mensagem" formControlName="body"
+				   [errorStateMatcher]="matcher"></textarea>	
         <mat-error>
           <span *ngIf="!messageForm.get('body').valid && messageForm.get('body').touched">Preencha com a mensagem</span>
         </mat-error>
@@ -41,6 +38,7 @@
       </div>
     </form>
   </mat-card>
+  </div>
 </div>
 </div>
 </div>

@@ -17,7 +17,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HomeComponent implements OnInit {
 	
-	displayedColumns: string[] = ['title', 'hour',  'subject', 'view' , 'edit'];
+	displayedColumns: string[] = ['title', 'hour', 'view' , 'edit'];
     data: Message[] = [];
     isLoadingResults = true;
 

@@ -1,6 +1,13 @@
 /* navigation bar */
 mat-sidenav-container{
-	margin-bottom:40px;
+	margin-bottom:80px;
+	.mat-toolbar{
+		padding-left:calc(10% - 20px);
+		padding-right:calc(10% - 20px);
+		li{
+			margin-left:30px;
+		}
+	}
 }
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
   height: 100%;

@@ -13,7 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { EditComponent } from './edit/edit.component';
-import { MessageDetailComponent } from './message-detail/message-detail.component';
+import { MessageDetailComponent } from './detail/message-detail.component';
 
 
 @NgModule({

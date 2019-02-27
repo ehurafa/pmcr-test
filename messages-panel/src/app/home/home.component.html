@@ -22,7 +22,7 @@
 			  
 			   
 				 <table mat-table [dataSource]="data" class="message-table"
-           matSort matSortActive="hour" matSortDisableClear matSortDirection="asc">
+           matSort matSortActive="hour" matSortDisableClear matSortDirection="asc" *ngIf="data.length > 0">
 					   
 				  <!-- Título da mensagem -->
 				  <ng-container matColumnDef="title">
@@ -36,13 +36,7 @@
 					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].hour | date: 'dd/MM/yyy hh:mm' }}</td>
 				  </ng-container>
 				  
-				  <!-- Assunto da mensagem -->
-				  <ng-container matColumnDef="subject">
-					<th mat-header-cell *matHeaderCellDef>Assunto da mensagem</th>
-					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].subject }}</td>
-				  </ng-container>
-				 
-				  
+							  
 				   <!-- Detalhes da mensagem -->
 				  <ng-container matColumnDef="view">
 					<th mat-header-cell *matHeaderCellDef></th>
@@ -72,7 +66,13 @@
 				  
 				</table>
 				
-                </div> 
+				
+				
+			</div> 
+			
+			<div *ngIf="data.length == 0">
+				<p>Nenhuma mensagem cadastrada</p>
+			</div>
           </mat-card-content>
         </mat-card>
       </div>

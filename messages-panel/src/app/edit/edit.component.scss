@@ -26,12 +26,27 @@
   margin: 5px;
 }
 
-.card {
-  min-width: 80%;
-  .edit-container {
-		display: flex;
-		flex-direction: column;
-		min-width: 100%;
+
+.edit-container {
+	display: flex;
+	flex-direction: column;
+	min-width: 100%;
+	
+	.card {
+		width: 80%;
 		
+		.form{
+			display: flex;
+			flex-direction: column;	
+		}
 	}	
- }
+}
+.white{
+	background:#fff;
+}
+.w-80 {
+	width:80%;
+}
+.margin-auto{
+	margin: 0 auto;
+}

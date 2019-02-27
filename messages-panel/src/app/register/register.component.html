@@ -41,7 +41,7 @@
 		  
 		  
 		  <div class="button-row">
-			<button type="submit"  mat-flat-button color="primary"><mat-icon>cadastrar</mat-icon> cadastrar</button>
+			<button type="submit" [disabled]="!messageForm.valid"  mat-flat-button color="primary"><mat-icon>save</mat-icon> cadastrar</button>
 		  </div>
 		 
 		</form>

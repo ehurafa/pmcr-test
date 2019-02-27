@@ -1,6 +1,11 @@
 .card {
   min-width: 80%;
   
+	h2{
+		font-size:50px;
+		margin-bottom:0;
+	}
+  
 	.message-container {
 	  display: flex;
 	  flex-direction: column;
@@ -8,16 +13,21 @@
 	  min-width: 100%;
 	}
 	
-	.mat-table {
-	  overflow: auto;
-	  max-height: 500px;
-	}
-	table {
-	  width: 100%;
-	}
-
-	a {
-	  cursor: pointer;
+	.col{
+		width:45%;
+		float:left;
+		&.col-left{
+			padding-left:8px;
+			.buttons{
+				margin-top:-45px;
+				padding-left:10px;
+			}
+		}
+		&.col-right{
+			padding:20px;
+			background: #222;
+			margin-top:25px;
+		}
 	}
 
 }
