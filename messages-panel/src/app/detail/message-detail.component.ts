@@ -13,7 +13,7 @@ import { Message } from '../message';
 })
 export class MessageDetailComponent implements OnInit {
 	
-  message: Message = { id: 0, title: '', hour: '', subject: '', body: '' };
+  message: Message = { id: 0, title: '', hour: new Date(), subject: '', body: '' };
   isLoadingResults = false;     
   
    
