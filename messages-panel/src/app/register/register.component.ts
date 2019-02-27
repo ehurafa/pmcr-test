@@ -27,9 +27,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
 	  this.messageForm = this.formBuilder.group({
-		'message_title' : [null, Validators.required],
-		'message_body' : [null, Validators.required],
-		'message_subject' : [null, Validators.required],
+		'title' : [null, Validators.required],
+		'body' : [null, Validators.required],
+		'subject' : [null, Validators.required],
 		'hour' : [null, Validators.required]
 	  });
   }
@@ -38,9 +38,9 @@ export class RegisterComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addMessage(form)
       .subscribe(res => {
-          let id = res['_id'];
+          let id = res['id'];
           this.isLoadingResults = false;
-          this.router.navigate(['/mensagem', id]);
+          this.router.navigate(['/inicial']);
         }, (err) => {
           console.log(err);
           this.isLoadingResults = false;

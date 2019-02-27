@@ -9,11 +9,11 @@ import { Message } from '../message';
 @Component({
   selector: 'app-message-detail',
   templateUrl: './message-detail.component.html',
-  styleUrls: ['./message-detail.component.css']
+  styleUrls: ['./message-detail.component.scss']
 })
 export class MessageDetailComponent implements OnInit {
 	
-  msg: Message = { id: 0, title: '', hour: '', subject: '', body: '' };
+  message: Message = { id: 0, title: '', hour: '', subject: '', body: '' };
   isLoadingResults = false;     
   
    
@@ -24,8 +24,8 @@ export class MessageDetailComponent implements OnInit {
   getMessageDetails(id) {
 	  this.api.getMessage(id)
 		.subscribe(data => {
-		  this.msg = data;
-		  console.log(this.msg);
+		  this.message = data;
+		  console.log(this.message);
 		  this.isLoadingResults = false;
 		});
 	}

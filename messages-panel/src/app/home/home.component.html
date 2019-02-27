@@ -18,45 +18,58 @@
             <h3>Mensagens</h3>
           </mat-card-title>
           <mat-card-content>
-              <div class="message-container mat-elevation-z8">
+              <div class="message-container mat-elevation-z2">
 			  
-			  data = {{ data }}
-             
-				  <table mat-table [dataSource]="data" class="message-table"
-					   matSort matSortActive="title" matSortDisableClear matSortDirection="asc">
-
+			   
+				 <table mat-table [dataSource]="data" class="message-table"
+           matSort matSortActive="title" matSortDisableClear matSortDirection="asc">
+					   
 				  <!-- Título da mensagem -->
 				  <ng-container matColumnDef="title">
 					<th mat-header-cell *matHeaderCellDef>Título</th>
 					<td mat-cell *matCellDef="let row; let i = index">{{data[i].title}}</td>
 				  </ng-container>
-
-				  <!-- Hora da publicação -->
+				  
+				 <!-- Hora da publicação -->
 				  <ng-container matColumnDef="hour">
 					<th mat-header-cell *matHeaderCellDef>Hora de cadastro</th>
-					<td mat-cell *matCellDef="let row"> {{data.hour}}</td>
+					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].hour}}</td>
 				  </ng-container>
 				  
 				  <!-- Assunto da mensagem -->
 				  <ng-container matColumnDef="subject">
 					<th mat-header-cell *matHeaderCellDef>Assunto da mensagem</th>
-					<td mat-cell *matCellDef="let row"> {{data.subject}}</td>
+					<td mat-cell *matCellDef="let row; let i = index"> {{data[i].subject}}</td>
 				  </ng-container>
+				 
 				  
-				  <!-- Corpo da mensagem -->
-				  <ng-container matColumnDef="body">
-					<th mat-header-cell *matHeaderCellDef>Mensagem</th>
-					<td mat-cell *matCellDef="let row"> {{data.body}}</td>
-				  </ng-container>
-				  
-				   <!-- Excluir mensagem -->
-				  <ng-container matColumnDef="delete">
+				   <!-- Detalhes da mensagem -->
+				  <ng-container matColumnDef="view">
 					<th mat-header-cell *matHeaderCellDef></th>
-					<td mat-cell *matCellDef="let row"> --</td>
+					<td mat-cell *matCellDef="let row; let i = index">
+						 <mat-card-actions>
+							 <a mat-flat-button color="accent" [routerLink]="['/mensagem', data[i].id]"><mat-icon>visibility</mat-icon></a>							 
+						</mat-card-actions>
+					</td>
 				  </ng-container>
-
+				  
+				  <!-- Editar mensagem -->
+				  <ng-container matColumnDef="edit">
+					<th mat-header-cell *matHeaderCellDef></th>
+					<td mat-cell *matCellDef="let row; let i = index">
+						 <mat-card-actions>
+							 <a mat-flat-button color="primary" [routerLink]="['/editar', data[i].id]"><mat-icon>edit</mat-icon></a>							 
+						</mat-card-actions>
+					</td>
+				  </ng-container>
+				  
+				  
+				 
+				  
 				  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-				  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/product-details/', row.id]"></tr>
+				  <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+
+				  
 				</table>
 				
                 </div> 

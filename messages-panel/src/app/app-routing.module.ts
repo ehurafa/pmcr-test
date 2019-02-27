@@ -22,12 +22,12 @@ const routes: Routes = [
 		 data: { title: 'Cadastrar Mensagem'}
 	  },
 	  {
-		path: 'edit/:id',
+		path: 'editar/:id',
 		component: EditComponent,
 		data: { title: 'Editar Mensagem' }
 	  },
 	  {
-		path: 'mensagem',
+		path: 'mensagem/:id',
 		component: MessageDetailComponent,
 		data: { title: 'Detalhes da Mensagem' }
 	  },

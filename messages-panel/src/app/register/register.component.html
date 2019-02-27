@@ -13,7 +13,7 @@
 		<form [formGroup]="messageForm" (ngSubmit)="onFormSubmit(messageForm.value)">
 		
 		  <mat-form-field class="example-full-width">
-			<input matInput placeholder="Título da Mensagem" formControlName="message_title"
+			<input matInput placeholder="Título da Mensagem" formControlName="title"
 				   [errorStateMatcher]="matcher">
 		 <!--   <mat-error>
 			  <span *ngIf="!messageForm.get('messsage_title').valid && messageForm.get('message_title').touched">Preencha com o título da mensagem</span>
@@ -22,22 +22,26 @@
 		  
 		  <mat-form-field class="example-full-width">     
 				   
-			<textarea matInput placeholder="Conteúdo da mensagem" formControlName="message_body"
+			<textarea matInput placeholder="Conteúdo da mensagem" formControlName="body"
 				   [errorStateMatcher]="matcher"></textarea>							  
 			<mat-error>
-			  <span *ngIf="!messageForm.get('message_body').valid && messageForm.get('message_body').touched">Preencha com o conteúdo da mensagem</span>
+			  <span *ngIf="!messageForm.get('body').valid && messageForm.get('body').touched">Preencha com o conteúdo da mensagem</span>
 			</mat-error>
 		  </mat-form-field>
 		  
 		  <mat-form-field class="example-full-width">
-			<input matInput placeholder="Assunto da mensagem" formControlName="message_subject"
+			<input matInput placeholder="Assunto da mensagem" formControlName="subject"
 				   [errorStateMatcher]="matcher">
 		   <!-- <mat-error>
 			  <span *ngIf="!messageForm.get('message_subject').valid && productForm.get('message_subject').touched">Preencha com o assunto da mensagem</span>
 			</mat-error>  -->
 		  </mat-form-field>
+		  
+		  
+		  
+		  
 		  <div class="button-row">
-			<button type="submit" [disabled]="!messageForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+			<button type="submit"  mat-flat-button color="primary"><mat-icon>cadastrar</mat-icon> cadastrar</button>
 		  </div>
 		 
 		</form>

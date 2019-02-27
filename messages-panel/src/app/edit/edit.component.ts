@@ -18,10 +18,10 @@ export class EditComponent implements OnInit {
 	
 	messageForm: FormGroup;
 	id:number= 0;
-	message_title:string='';
-	message_body:string='';
-	message_subject:number=null;
-	message_hour:string='';
+	title:string='';
+	body:string='';
+	subject:number=null;
+	hour:string='';
 	isLoadingResults = false;
 	
 	
@@ -33,10 +33,10 @@ export class EditComponent implements OnInit {
 	  this.api.getMessage(id).subscribe(data => {
 		this.id = data.id;
 		this.messageForm.setValue({
-		  message_title: data.title,
-		  message_body: data.body,
-		  message_subject: data.subject,
-		   message_hour: data.hour
+		  title: data.title,
+		  body: data.body,
+		  subject: data.subject,
+		  hour: data.hour
 		});
 	  });
 	}
@@ -67,10 +67,10 @@ export class EditComponent implements OnInit {
   ngOnInit() {
 	  this.getMessage(this.route.snapshot.params['id']);
 	  this.messageForm = this.formBuilder.group({
-		'message_title' : [null, Validators.required],
-		'message_body' : [null, Validators.required],
-		'message_subject' : [null, Validators.required],
-		'message_hour' : [null, Validators.required]
+		'title' : [null, Validators.required],
+		'body' : [null, Validators.required],
+		'subject' : [null, Validators.required],
+		'hour' : [null, Validators.required]
 	  });
 	}
 

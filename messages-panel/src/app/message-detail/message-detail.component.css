@@ -20,3 +20,21 @@
 .mat-flat-button {
   margin: 5px;
 }
+
+.mat-card {
+  min-width: 80%;
+  
+	.message-container {
+	  display: flex;
+	  flex-direction: column;
+	  max-height: 500px;
+	  min-width: 100%;
+	}	
+	
+	.col{	border:1px solid red;
+		float:left;
+		width:50%;
+	}
+	
+
+}

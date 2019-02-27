@@ -20,7 +20,6 @@ import 'rxjs/add/operator/map'
 })
 export class ApiService {
   
-   //url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {
 
@@ -59,7 +58,7 @@ export class ApiService {
 	}
 	
 	
-	addMessage (message): Observable<Message> {
+	addMessage(message): Observable<Message> {
 	return this.http.post<Message>(apiUrl, message, httpOptions).pipe(
 		tap((message: Message) => console.log(`added message w/ id=${message.id}`)),
 		catchError(this.handleError<Message>('addMesssage'))
