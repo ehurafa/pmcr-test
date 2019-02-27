@@ -35,7 +35,7 @@ Para rodar o projeto basta seguir os passos à seguir
 ### API local
 
 ```
-* Para habilitar a API na posta 3000 basta utilizar o comando json-server --watch messageAPI.json
+* Para habilitar a API na posta 3000 basta. Abrir um novo terminal no diretorio "messages-panel" e utilizar o comando json-server --watch messageAPI.json
 
 ```
 
