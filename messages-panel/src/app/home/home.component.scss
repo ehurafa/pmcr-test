@@ -1,38 +1,26 @@
 .card {
   min-width: 80%;
   
-	h2{
-		font-size:50px;
-		margin-bottom:0;
-	}
-  
-	
-	
-	.col{
-		width:45%;
-		float:left;
-		&.col-left{
-			padding-left:8px;
-			.buttons{
-				margin-top:-45px;
-				padding-left:10px;
-			}
-		}
-		&.col-right{
-			padding:20px;
-			background: #222;
-			margin-top:25px;
-		}
-	}
-
-}
-
-.message-container {
+	.message-container {
 	  display: flex;
 	  flex-direction: column;
 	  max-height: 500px;
 	  min-width: 100%;
 	}
+	
+	.mat-table {
+	  overflow: auto;
+	  max-height: 500px;
+	}
+	table {
+	  width: 100%;
+	}
+
+	a {
+	  cursor: pointer;
+	}
+
+}
 
 br{
 	display:none;
@@ -65,6 +53,10 @@ br{
   max-width: 124px;
 }
 
-.mat-flat-button {
-  margin: 5px;
+
+.mat-card-actions{
+	.mat-flat-button{
+		margin: 5px;
+		margin-top:20px;
+	}
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatMenuModule} from '@angular/material/menu';
+import { Menu } from '../menu';
 
 
 
@@ -8,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+	
+  menu = Menu;
 
   constructor() { }
 
