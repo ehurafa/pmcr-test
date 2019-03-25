@@ -17,6 +17,13 @@ O que você precisa para rodar o projeto
 
 ```
 
+### API local
+
+```
+* Para habilitar a API na posta 3000 basta utilizar o comando json-server --watch messageAPI.json
+
+```
+
 ### Instalação
 
 Para rodar o projeto basta seguir os passos à seguir
@@ -32,11 +39,6 @@ Para rodar o projeto basta seguir os passos à seguir
 
 ```
 
-### API local
 
-```
-* Para habilitar a API na posta 3000 basta utilizar o comando json-server --watch messageAPI.json
-
-```
 
 ### :)

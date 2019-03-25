@@ -25,7 +25,7 @@ export class MessageDetailComponent implements OnInit {
 	  this.api.getMessage(id)
 		.subscribe(data => {
 		  this.message = data;
-		  console.log(this.message);
+		 // console.log(this.message);
 		  this.isLoadingResults = false;
 		});
 	}
@@ -52,7 +52,7 @@ export class MessageDetailComponent implements OnInit {
  
 	
   ngOnInit() {
-    console.log(this.route.snapshot.params['id']);
+    //console.log(this.route.snapshot.params['id']);
     this.getMessageDetails(this.route.snapshot.params['id']);
   }
 

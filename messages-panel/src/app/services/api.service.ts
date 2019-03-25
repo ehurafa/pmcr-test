@@ -43,7 +43,9 @@ export class ApiService {
 		 return this.http.get<Message[]>(apiUrl)
 		 
 		.pipe(
-        tap(messages => console.log('Fetch messages')),
+        tap(
+					//messages => console.log('Fetch messages')
+					),
         catchError(this.handleError('getMessages', []))
       );
 		
@@ -52,7 +54,9 @@ export class ApiService {
 	getMessage(id: number): Observable<Message> {
 	  const url = `${apiUrl}/${id}`;
 	  return this.http.get<Message>(url).pipe(
-		tap(_ => console.log(`fetched message id=${id}`)),
+		tap(
+		//	_ => console.log(`fetched message id=${id}`)
+			),
 		catchError(this.handleError<Message>(`getMessage id=${id}`))
 	  );
 	}

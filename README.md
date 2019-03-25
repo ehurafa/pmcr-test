@@ -17,25 +17,26 @@ O que você precisa para rodar o projeto
 
 ```
 
+
+### API local
+
+```
+* Para habilitar a API na posta 3000 basta. Abrir um novo terminal no diretorio "messages-panel" e utilizar o comando json-server --watch messageAPI.json
+
+```
+
 ### Instalação
 
 Para rodar o projeto basta seguir os passos à seguir
 
-```
+
 * Baixar ou clonar o projeto deste repositório
 
 * Abrir o terminal na pasta do projeto
 
 * Executar o comando "npm install" para baixar as dependências do projeto (Caso necessário , por incompatibilidade de dependencias. Utilizar o comando --force). 
 
-
-
-```
-
-### API local
-
-```
-* Para habilitar a API na posta 3000 basta. Abrir um novo terminal no diretorio "messages-panel" e utilizar o comando json-server --watch messageAPI.json
+* "start": "ng serve",  "build": "ng build"
 
 ```
 

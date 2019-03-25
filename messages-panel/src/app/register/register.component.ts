@@ -21,7 +21,10 @@ export class RegisterComponent implements OnInit {
 	isLoadingResults = false;
 	
 
-  constructor( private router: Router, private api: ApiService, private formBuilder: FormBuilder ) {
+  constructor( 
+    private router: Router, 
+    private api: ApiService, 
+    private formBuilder: FormBuilder ) {
   }
 
 
@@ -36,9 +39,12 @@ export class RegisterComponent implements OnInit {
   
    onFormSubmit(form:NgForm) {
     this.isLoadingResults = true;
+    console.log('form ', form);
     this.api.addMessage(form)
       .subscribe(res => {
-          let id = res['id'];
+        console.log('res ', res);
+          //let id = res['id'];
+          let id = res;
           this.isLoadingResults = false;
           this.router.navigate(['/inicial']);
         }, (err) => {
